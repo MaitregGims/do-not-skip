@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="utf-8">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta content="IE=edge" http-equiv="X-UA-Compatible">
+        <link rel="stylesheet" href="./assets/css/style.css">
+        <link rel="stylesheet" href="./assets/css/normalize.css">
+        <title>Skip Pls</title>
+    </head>
+
+    <body>
+        <main>
+            <div id="game-menu">
+                <h1>do not <span class="glow">skip</span></h1>
+                <button class="main-menu-btn" id="Play">Play</button>
+                <button class="main-menu-btn" id="Options">Options</button>
+                <div id="options-menu" class="hidden">
+                    <div class="cross">
+                        <i class="fa-solid fa-xmark"></i>
+                    </div>
+
+                    <img src="https://avatars.githubusercontent.com/u/150128219?v=" alt="">
+                </div>
+            </div>
+
+
+            <div id="loadingScreen" class="hidden">
+                <div class="loader"></div>
+                <button class="main-menu-btn" id="skippLoading">skip ?</button>
+                <p class="tips">Tips : do not skip i swear.</p>
+                <audio src="./assets/music/ElevatorJam.mp3" id="jam"></audio>
+            </div>
+
+            <div id="game-screen" class="hidden">
+                <div class="game-wrapper">
+                    <div class="text-guy-wrapp">
+                        <p class="text-guy"></p>
+                    </div>
+                    <div class="btn-wrapper">
+                        <button class="main-menu-btn game-btn" id="btn-1"></button>
+                        <button class="main-menu-btn game-btn" id="btn-2"></button>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <script src="./assets/js/dialogues.js"></script>
+        <script src="./assets/js/gameSettings.js"></script>
+        <script src="./assets/js/app.js"></script>
+        <script src="https://kit.fontawesome.com/9770d1f1b1.js" crossorigin="anonymous"></script>
+    </body>
+</html>
+
