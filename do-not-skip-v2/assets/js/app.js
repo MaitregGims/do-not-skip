@@ -11,6 +11,7 @@ const jam = document.querySelector('#jam')
 let tipsLen = 0;
 let skipped = false;
 
+
 // loading screen functions
 
 let sayTips = () => {

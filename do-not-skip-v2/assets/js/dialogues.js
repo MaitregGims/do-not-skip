@@ -3,7 +3,7 @@ const fiveToTenSkip = ["Still not learning i see…", "You clicked on skip didnt
 
 let mainDialogues = [
     {
-        text : "you finnaly awake ?",
+        text : "you Finnaly awake ?",
         rep1 : "where i am ?",
         rep2 : "who are you ?",
         awnserone : "dont ask useless questions.",

@@ -19,6 +19,23 @@ let DialoguesChanger = (id) => {
     btnTwo.textContent = specialInteracion[textID].rep2
 }
 
+let InteractionsGame = () => {
+    let isAGames = Math.floor(Math.random() * 100)
+    
+    if (isAGames >= 20) {
+        let rdm = Math.floor(Math.random() * 2)
+        if (rdm == 1) {
+            babyGame();
+            console.log('startGame')
+        } else {
+            SkipGame();
+            console.log('startGame')
+        }
+    } else {
+        console.log('no game :(')
+    }
+}
+
 // event 
 
 gameBtn.forEach((btn) => {
@@ -49,6 +66,8 @@ gameBtn.forEach((btn) => {
                 specialInteracion = DialoguesFiveToTenSkip
                 DialoguesChanger(btn.id);
             }
+
+            InteractionsGame();
         }, 5000);   
     })
 })
