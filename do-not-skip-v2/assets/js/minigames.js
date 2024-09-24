@@ -1,6 +1,6 @@
 const closeWindow = document.querySelector('#window-cross');
 const miniGames = document.querySelector('.minigames')
-const nameEXE = document.querySelector(".game-name")
+const nameEXE = document.querySelector(".game-name-changer")
 const looseScreen = document.querySelector('#loose-screen');
 const babyGameWindow = document.querySelector('.baby-game-window')
 let skipper;
@@ -17,13 +17,14 @@ let close = () => {
 // baby game code
 
 let babyGame = () => {
+    let intervalSpeed = 500
     const nathan = document.querySelector('#nathan');
     const reset = document.querySelector('#reset')
     const comeBack = document.querySelector('#reset-not-hidden')
     const babyGameControl = document.querySelector('.baby-controls');
     const babyGameImg = document.querySelector('.baby-game');
 
-    let intervalSpeed = 500
+
     let margin = 0
     gameName = "Baby_Game.exe"
     nameEXE.textContent = gameName
@@ -35,8 +36,7 @@ let babyGame = () => {
         looseScreen.classList.add('hidden')
         babyGameWindow.classList.remove('hidden')
         margin = 0
-        babyGameLoose = false  
-        intervalSpeed = 500;  
+        babyGameLoose = false
         reset.textContent = "reset"
     }
 
@@ -50,11 +50,13 @@ let babyGame = () => {
         looseScreen.classList.remove('hidden')
         babyGameLoose = true
         nameEXE.textContent = "Looser.exe"
+        return null
     }
 
     let avancerNathan = () => {
         if (margin == 65) {
             looseScreenBabyGame();
+            clearInterval(avancer)
         };
         margin++;
         console.log(intervalSpeed)
@@ -68,21 +70,23 @@ let babyGame = () => {
     reset.addEventListener('click', () => {
         if (reset.classList.contains('cacher')) return null;
         if (reset.textContent == "skip ?") {
+            clearInterval(avancer)
             looseScreenBabyGame();
+        } else {
+            let rdm = Math.floor(Math.random() * 100)
+            if (rdm >= 95) {
+                setTimeout(() => {
+                    reset.textContent = "skip ?"
+                }, 500)
+            }
+            console.log(rdm)
+            margin = 0
+            intervalSpeed -= 50
+            clearInterval(avancer)
+            avancer = setInterval(avancerNathan, intervalSpeed)
+            reset.classList.add('cacher')
+            comeBack.classList.remove('cacher')
         }
-        let rdm = Math.floor(Math.random() * 100)
-        if (rdm >= 95) {
-            setTimeout(() => {
-                reset.textContent = "skip ?"
-            }, 500)
-        }
-        console.log(rdm)
-        margin = 0
-        intervalSpeed -= 50
-        clearInterval(avancer)
-        avancer = setInterval(avancerNathan, intervalSpeed)
-        reset.classList.add('cacher')
-        comeBack.classList.remove('cacher')
     })
 
     comeBack.addEventListener('click', () => {
@@ -92,12 +96,16 @@ let babyGame = () => {
     })
 
     closeWindow.addEventListener('click', () => {
-        if (babyGameLoose == true) close();
+        if (babyGameLoose == true) {
+            close();
+        }
     })
 
-
     setTimeout(() => {
-        alert('win')
+        if (babyGameLoose == true) return null;
+        else {
+            alert('win')
+        }
         close()
     }, 180000)
 }
@@ -118,7 +126,7 @@ function SkipGame() {
         miniGames.classList.remove('hidden')
         SkipGameLoose = false
         skipGameWindow.classList.remove('hidden')
-        looseScreen.classList.add('hidden') 
+        looseScreen.classList.add('hidden')
     }
 
     timer()

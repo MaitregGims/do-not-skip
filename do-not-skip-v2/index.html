@@ -8,20 +8,33 @@
     <link rel="stylesheet" href="./assets/css/style.css">
     <link rel="stylesheet" href="./assets/css/normalize.css">
     <title>Skip Pls</title>
+    <link rel="icon" type="image/x-icon" href="../assets/image/vhs2.png">
 </head>
 
 <body>
     <main>
-        <div id="game-menu">
+        <div id="tw">
+            <i class="fa-solid fa-headphones-simple hidden"></i>
+            <h3 id="warning"><span class="red">Warning</span> : This game is not intended for epileptic/sensitives peoples, and may contain jumpscares and loud noises.</h3>
+        </div>
+
+        
+        <div id="game-menu" class="hidden">
             <h1>do not <span class="glow">skip</span></h1>
             <button class="main-menu-btn" id="Play">Play</button>
             <button class="main-menu-btn" id="Options">Options</button>
             <div id="options-menu" class="hidden">
-                <div class="cross">
-                    <i class="fa-solid fa-xmark"></i>
-                </div>
+                <div class="window-container">
+                    <div class="name-container">
+                        <p class="game-name">Game_settings.exe</p>
+                    </div>
+                        <div class="window-icons" id="expand"><i class="fa-solid fa-expand"></i></div>
+                        <div class="window-icons"><i class="fa-solid fa-minus"></i></div>
+                        <div class="window-icons cross"><i class="fa-solid fa-xmark"></i></div>
+                    </div>
 
-                <img src="https://avatars.githubusercontent.com/u/150128219?v=" alt="">
+
+                <img src="https://avatars.githubusercontent.com/u/150128219?v=" draggable="false"  alt="">
             </div>
         </div>
 
@@ -48,7 +61,7 @@
         <div class="minigames hidden">
             <div class="window-container">
             <div class="name-container">
-                <p class="game-name">yey</p>
+                <p class="game-name-changer">Game.exe</p>
             </div>
                 <div class="window-icons"><i class="fa-solid fa-expand"></i></div>
                 <div class="window-icons"><i class="fa-solid fa-minus"></i></div>
@@ -73,8 +86,8 @@
 
             <div class="baby-game-window hidden">
                 <div class="baby-game">
-                    <img src="./assets/image/Tardis.png" alt="" id="tardis">
-                    <img src="./assets/image/nathan.png" alt="" id="nathan">
+                    <img src="./assets/image/Tardis.png" draggable="false" alt="" id="tardis">
+                    <img src="./assets/image/nathan.png" draggable="false" alt="" id="nathan">
                 </div>
 
                 <div class="baby-controls">

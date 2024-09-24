@@ -1,6 +1,3 @@
-const zeroToFiveSkip = ["I see you skiped…", "Have you read the title of the game…", "Skipping is no use in there", "I feel like you are going to give me trouble", "The double a thing Varus, the double a thing, we all agreed to it", "Pathetic…", "Sooner or later, you will see why you should not have skipped"]
-const fiveToTenSkip = ["Still not learning i see…", "You clicked on skip didnt you…", "Skipping wont get you far"]
-
 let mainDialogues = [
     {
         text : "you Finnaly awake ?",
@@ -16,6 +13,24 @@ let mainDialogues = [
         rep2 : "yeah fire",
         awnserone : "mhhhhh..",
         awnsertwo : "good taste brotha"
+    },
+
+    {
+        text : "Good... Everything started when you passed out. I saved you, apparently... We live in a... different world. I should not tell more but remember one thing... Things a re not what they seems to be.",
+        rep1 : "Ok",
+        rep2 : "Ok ?",
+        awnserone : "Good... Everything started when you passed out. I saved you, apparently... We live in a... different world. I should not tell more but remember one thing... Things a re not what they seems to be.",
+        awnsertwo : "Good... Everything started when you passed out. I saved you, apparently... We live in a... different world. I should not tell more but remember one thing... Things a re not what they seems to be.",
+        skippBtn : "Skip."
+    },
+
+    {
+        text : "Hello, I am Aatris, ǁ𝙹⚍∷ リ𝙹ℸ ̣ ᓭ⚍!¡!¡𝙹ᓭᒷ⟍̅ ℸ ̣𝙹 ꖌリ𝙹∴'s bot. I will take care of you while masters not here. I will make you pass multiple",
+        rep1 : "...",
+        rep2 : "I'm ready",
+        awnserone : "Good... Everything started when you passed out. I saved you, apparently... We live in a... different world. I should not tell more but remember one thing... Things a re not what they seems to be.",
+        awnsertwo : "Good... Everything started when you passed out. I saved you, apparently... We live in a... different world. I should not tell more but remember one thing... Things a re not what they seems to be.",
+        skippBtn : "Skip."
     }
 ]
 
@@ -54,3 +69,11 @@ let DialoguesFiveToTenSkip = [
         awnsertwo : "good taste brotha"
     }
 ]
+
+//Différentes fin :
+//la fin ou on coopère
+//la fin ou on nique le robot et son maitre
+//la fin ou on meurt
+//la fin qui recommence le jeu
+
+//easter egg quand on a tt les achievement, on l'on parle de notre experience et les remercions d'avoir joué au jeu dans son entièreté

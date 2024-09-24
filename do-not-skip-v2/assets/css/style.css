@@ -16,7 +16,8 @@ h1 {
 
 #game-menu,
 #loadingScreen,
-#game-screen {
+#game-screen,
+#tw {
     width: 100%;
     height: 100vh;
     background-color: black;
@@ -117,17 +118,18 @@ h1 {
     height: 800px;
     border: 2px solid white;
     z-index: 999999;
-    position: absolute;
+    position: fixed;
     background-color: black;
-    bottom: 8%;
     display: flex;
     flex-direction: column;
+    border-radius: 10px;
 }
+
+
 
 .cross {
     width: 50px;
     height: 50px;
-    font-size: 200%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -140,7 +142,7 @@ image {
 }
 
 .cross:hover {
-   background-color: red;
+    background-color: red;
 }
 
 .text-guy-wrapp {
@@ -151,7 +153,8 @@ image {
     height: 200px;
     display: flex;
     align-items: center;
-    padding: 5px;
+    justify-content: center;
+    padding: 10px;
 
 }
 
@@ -179,12 +182,15 @@ image {
     border: 3px solid white;
     clip-path: polygon(0 2px, 2px 2px, 2px 0, calc(100% - 2px) 0, calc(100% - 2px) 2px, 100% 2px, 100% calc(100% - 2px), calc(100% - 2px) calc(100% - 2px), calc(100% - 2px) 100%, 2px 100%, 2px calc(100% - 2px), 0 calc(100% - 2px));
 }
+
 .path {
     background-color: aliceblue;
 }
+
 .finish {
     background-color: rgb(50, 50, 128);
 }
+
 .lab-1_1 {
     width: 200px;
     height: 40px;
@@ -194,6 +200,8 @@ image {
     display: flex;
     justify-content: end;
     border-bottom: 3px solid white;
+    cursor: pointer;
+    position: relative;
 }
 
 .window-icons {
@@ -279,9 +287,11 @@ h2 {
     justify-content: center;
     flex-direction: column;
 }
+
 .timer {
     font-size: 60px;
 }
+
 .skip {
     display: flex;
     align-items: center;
@@ -294,35 +304,127 @@ h2 {
     transition: 0.5s ease-in;
     margin-bottom: 80px;
 }
+
 .skip:hover {
     color: red;
     border: 3px solid red;
 }
+
 .white-to-red {
     color: red;
     transition: 1s linear;
 }
+
 .red-to-white {
     color: white;
     transition: 0.8s linear;
 }
+
 .trembling {
     animation: trembler 1s infinite;
 }
+
 @keyframes trembler {
     0% {
         transform: translateX(0);
     }
+
     25% {
         transform: translateX(-5px);
     }
+
     50% {
         transform: translateX(5px);
     }
+
     75% {
         transform: translateX(-5px);
     }
+
     100% {
         transform: translateX(0);
     }
+}
+
+#tw {
+    transition: .5s;
+    justify-content: center;
+}
+
+@keyframes transition {
+    0% {
+        filter: brightness(100%);
+    }
+
+    30% {
+        filter: brightness(0%);
+    }
+
+    100% {
+        filter: brightness(100%);
+    }
+}
+
+.transition {
+    animation: transition 6s ease-in-out;
+}
+
+.fa-headphones-simple {
+    font-size: 70px;
+}
+
+h3 {
+    font-size: 250%;
+    text-align: center;
+}
+
+
+
+.typewriter {
+    overflow: hidden;
+    /* Ensures the content is not revealed until the animation */
+    border-right: .15em solid white;
+    /* The typwriter cursor */
+    white-space: nowrap;
+    /* Keeps the content on a single line */
+    margin: 0 auto;
+    /* Gives that scrolling effect as the typing happens */
+    letter-spacing: .15em;
+    /* Adjust as needed */
+    animation:
+        typing 3.5s steps(40, end),
+        blink-caret .75s step-end infinite;
+}
+
+/* The typing effect */
+@keyframes typing {
+    from {
+        width: 0
+    }
+
+    to {
+        width: 40%
+    }
+}
+
+/* The typewriter cursor effect */
+@keyframes blink-caret {
+
+    from,
+    to {
+        border-color: transparent
+    }
+
+    50% {
+        border-color: rgb(255, 255, 255);
+    }
+}
+
+.game-name-changer {
+    margin: 0;
+    width: 70%;
+}
+
+.text-guy {
+    text-align: center;
 }
