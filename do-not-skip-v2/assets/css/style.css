@@ -428,3 +428,72 @@ h3 {
 .text-guy {
     text-align: center;
 }
+
+
+
+#Round {
+    font-size: 200%;
+}
+
+
+.memos {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.colors {
+    width: 100px;
+    height: 100px;
+    border-radius: 10px;
+    cursor: pointer;
+    margin: 5px;
+    transition: .5s;
+}
+
+.colors-wrapper {
+    width: 30%;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 10% 0 15% 0;
+}
+
+.green {
+    background-color: green;
+}
+
+.yellow {
+    background-color: yellow;
+}
+
+.red-bg {
+    background-color: red;
+}
+
+.blue {
+    background-color: blue;
+}
+
+.unselected-color {
+    filter: brightness(20%);
+}
+
+.color-clicked {
+    animation: glow-up .5s ease-in;
+}
+
+@keyframes glow-up {
+    0% {
+        filter: brightness(20%);
+    } 
+
+    50% {
+        filter: brightness(100%);
+    }
+
+    100% {
+        filter: brightness(20%);
+    }
+}

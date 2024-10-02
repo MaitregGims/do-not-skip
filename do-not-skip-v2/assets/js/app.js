@@ -117,6 +117,7 @@ function mouseUp(e) {
     document.removeEventListener('mousemove', mouseMove)
 }
 
+
 setTimeout(() => {
     allPage.classList.add('transition')
     setTimeout(() => {
@@ -132,7 +133,6 @@ setTimeout(() => {
         allPage.classList.add('transition')
     }, 2000)
     setTimeout(() => {
-        console.log("Names")
         headphones.classList.add('hidden')
         let redName1 = '<span class="red">ZEUS</span>'
         let redName2 = '<span class="red">Aomigo</span>'
