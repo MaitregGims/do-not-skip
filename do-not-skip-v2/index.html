@@ -8,18 +8,11 @@
     <link rel="stylesheet" href="./assets/css/style.css">
     <link rel="stylesheet" href="./assets/css/normalize.css">
     <title>Skip Pls</title>
-    <link rel="icon" type="image/x-icon" href="../assets/image/vhs2.png">
 </head>
 
 <body>
     <main>
-        <div id="tw">
-            <i class="fa-solid fa-headphones-simple hidden"></i>
-            <h3 id="warning"><span class="red">Warning</span> : This game is not intended for epileptic/sensitives peoples, and may contain jumpscares and loud noises.</h3>
-        </div>
-
-        
-        <div id="game-menu" class="hidden">
+        <div id="game-menu">
             <h1>do not <span class="glow">skip</span></h1>
             <button class="main-menu-btn" id="Play">Play</button>
             <button class="main-menu-btn" id="Options">Options</button>
@@ -28,13 +21,13 @@
                     <div class="name-container">
                         <p class="game-name">Game_settings.exe</p>
                     </div>
-                        <div class="window-icons" id="expand"><i class="fa-solid fa-expand"></i></div>
-                        <div class="window-icons"><i class="fa-solid fa-minus"></i></div>
-                        <div class="window-icons cross"><i class="fa-solid fa-xmark"></i></div>
-                    </div>
+                    <div class="window-icons"><i class="fa-solid fa-expand"></i></div>
+                    <div class="window-icons"><i class="fa-solid fa-minus"></i></div>
+                    <div class="window-icons cross"><i class="fa-solid fa-xmark"></i></div>
+                </div>
 
 
-                <img src="https://avatars.githubusercontent.com/u/150128219?v=" draggable="false"  alt="">
+                <img src="https://avatars.githubusercontent.com/u/150128219?v=" alt="">
             </div>
         </div>
 
@@ -60,9 +53,9 @@
 
         <div class="minigames hidden">
             <div class="window-container">
-            <div class="name-container">
-                <p class="game-name-changer">Game.exe</p>
-            </div>
+                <div class="name-container">
+                    <p class="game-name">yey</p>
+                </div>
                 <div class="window-icons"><i class="fa-solid fa-expand"></i></div>
                 <div class="window-icons"><i class="fa-solid fa-minus"></i></div>
                 <div class="window-icons" id="window-cross"><i class="fa-solid fa-xmark"></i></div>
@@ -78,14 +71,6 @@
             </div>
 
             <div class="memos">
-                <p class="you hidden red">your turn.</p>
-                <div class="colors-wrapper">
-                    <div class="colors red-bg unselected-color"></div>
-                    <div class="colors blue unselected-color"></div>
-                    <div class="colors green unselected-color"></div>
-                    <div class="colors yellow unselected-color"></div>
-                </div>
-                <h2 id="Round" class="hidden">Round x</h2>
             </div>
             <div class="morpion">
             </div>
@@ -94,13 +79,13 @@
 
             <div class="baby-game-window hidden">
                 <div class="baby-game">
-                    <img src="./assets/image/Tardis.png" draggable="false" alt="" id="tardis">
-                    <img src="./assets/image/nathan.png" draggable="false" alt="" id="nathan">
+                    <img src="./assets/image/Tardis.png" alt="" id="tardis">
+                    <img src="./assets/image/nathan.png" alt="" id="nathan">
                 </div>
 
                 <div class="baby-controls">
-                    <button id="reset"class="main-menu-btn">reset</button>
-                    <button id="reset-not-hidden"class="main-menu-btn cacher">come back hidden</button>
+                    <button id="reset" class="main-menu-btn">reset</button>
+                    <button id="reset-not-hidden" class="main-menu-btn cacher">come back hidden</button>
                 </div>
             </div>
             <div class="find-the-button">
@@ -109,6 +94,98 @@
             <div id="loose-screen" class="hidden">
                 <h2 class="red">You loose</h2>
                 <p class="looseText">close this windows</p>
+            </div>
+        </div>
+
+        <div class="bug hidden">
+            <div class="main-window window">
+                <div class="border border-one">
+                    <div class="window-container">
+                        <div class="name-container">
+                            <p class="game-name">Virus.exe</p>
+                        </div>
+                        <div class="window-icons"><i class="fa-solid fa-expand"></i></div>
+                        <div class="window-icons"><i class="fa-solid fa-minus"></i></div>
+                        <div class="window-icons cross"><i class="fa-solid fa-xmark"></i></div>
+                    </div>
+                    <div class="window-window">
+                        <div class="virus">
+                            <img src="assets/image/glitch.gif" alt="glitch" draggable="false">
+                        </div>
+                        <div class="text">
+                            <p>You've been hacked.</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="first-window window hidden">
+                <div class="border border-two">
+                    <div class="window-container">
+                        <div class="name-container">
+                            <p class="game-name">Problems.exe</p>
+                        </div>
+                        <div class="window-icons"><i class="fa-solid fa-expand"></i></div>
+                        <div class="window-icons"><i class="fa-solid fa-minus"></i></div>
+                        <div class="window-icons cross"><i class="fa-solid fa-xmark"></i></div>
+                    </div>
+                    <div class="window-window">
+                        <div class="eye">
+                            <img src="assets/image/eye.gif" alt="eye" draggable="false">
+                        </div>
+                        <div class="text">
+                            <p>He is watching you</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!--trouver une image-->
+            <div class="second-window window hidden">
+                <div class="border border-three">
+                    <div class="window-container">
+                        <div class="name-container">
+                            <p class="game-name">More_Problems.exe</p>
+                        </div>
+                        <div class="window-icons"><i class="fa-solid fa-expand"></i></div>
+                        <div class="window-icons"><i class="fa-solid fa-minus"></i></div>
+                        <div class="window-icons cross"><i class="fa-solid fa-xmark"></i></div>
+                    </div>
+                    <div class="window-window">
+                        <div class="warning">
+                            <img src="assets/image/warning.gif" alt="warning">
+                        </div>
+                        <div class="text">
+                            <p>He knows where you are</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+
+            <div class="third-window window hidden">
+                <div class="border border-four">
+                    <div class="window-container">
+                    <div class="name-container">
+                        <p class="game-name">Computer_Bug.exe</p>
+                    </div>
+                    <div class="window-icons"><i class="fa-solid fa-expand"></i></div>
+                    <div class="window-icons"><i class="fa-solid fa-minus"></i></div>
+                    <div class="window-icons cross"><i class="fa-solid fa-xmark"></i></div>
+                </div>
+                <div class="window-window">
+                    <div class="walking-man">
+                        <img src="assets/image/walk.gif" alt="walk" draggable="false">
+                    </div>
+                    <div class="text">
+                        <p>He will come after you</p>
+                    </div>
+                </div>
+                </div>
+                
             </div>
         </div>
     </main>

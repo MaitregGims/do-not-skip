@@ -1,19 +1,18 @@
 const closeWindow = document.querySelector('#window-cross');
 const miniGames = document.querySelector('.minigames')
-const nameEXE = document.querySelector(".game-name-changer")
+const nameEXE = document.querySelector(".game-name")
 const looseScreen = document.querySelector('#loose-screen');
 const babyGameWindow = document.querySelector('.baby-game-window')
+const bugMinigame = document.querySelector('.bug')
 let skipper;
 let timerSkip;
 let gameName;
 let SkipGameLoose = true
 let babyGameLoose = true
-let memoGameRecal = 1
-let timeSpeed = 1000
-let memoGameRound = 0
-let memoGameWindow = document.querySelector('.memos')
-let memoGameError = 0;
-let roundNb = 2;
+let speed = 2400
+let speed1 = 2200
+let speed2 = 2100
+analDestroyer()
 
 let close = () => {
     miniGames.classList.add('hidden')
@@ -22,14 +21,13 @@ let close = () => {
 // baby game code
 
 let babyGame = () => {
-    let intervalSpeed = 500
     const nathan = document.querySelector('#nathan');
     const reset = document.querySelector('#reset')
     const comeBack = document.querySelector('#reset-not-hidden')
     const babyGameControl = document.querySelector('.baby-controls');
     const babyGameImg = document.querySelector('.baby-game');
 
-
+    let intervalSpeed = 500
     let margin = 0
     gameName = "Baby_Game.exe"
     nameEXE.textContent = gameName
@@ -42,6 +40,7 @@ let babyGame = () => {
         babyGameWindow.classList.remove('hidden')
         margin = 0
         babyGameLoose = false
+        intervalSpeed = 500;
         reset.textContent = "reset"
     }
 
@@ -55,13 +54,11 @@ let babyGame = () => {
         looseScreen.classList.remove('hidden')
         babyGameLoose = true
         nameEXE.textContent = "Looser.exe"
-        return null
     }
 
     let avancerNathan = () => {
         if (margin == 65) {
             looseScreenBabyGame();
-            clearInterval(avancer)
         };
         margin++;
         console.log(intervalSpeed)
@@ -75,23 +72,21 @@ let babyGame = () => {
     reset.addEventListener('click', () => {
         if (reset.classList.contains('cacher')) return null;
         if (reset.textContent == "skip ?") {
-            clearInterval(avancer)
             looseScreenBabyGame();
-        } else {
-            let rdm = Math.floor(Math.random() * 100)
-            if (rdm >= 95) {
-                setTimeout(() => {
-                    reset.textContent = "skip ?"
-                }, 500)
-            }
-            console.log(rdm)
-            margin = 0
-            intervalSpeed -= 50
-            clearInterval(avancer)
-            avancer = setInterval(avancerNathan, intervalSpeed)
-            reset.classList.add('cacher')
-            comeBack.classList.remove('cacher')
         }
+        let rdm = Math.floor(Math.random() * 100)
+        if (rdm >= 95) {
+            setTimeout(() => {
+                reset.textContent = "skip ?"
+            }, 500)
+        }
+        console.log(rdm)
+        margin = 0
+        intervalSpeed -= 50
+        clearInterval(avancer)
+        avancer = setInterval(avancerNathan, intervalSpeed)
+        reset.classList.add('cacher')
+        comeBack.classList.remove('cacher')
     })
 
     comeBack.addEventListener('click', () => {
@@ -101,16 +96,12 @@ let babyGame = () => {
     })
 
     closeWindow.addEventListener('click', () => {
-        if (babyGameLoose == true) {
-            close();
-        }
+        if (babyGameLoose == true) close();
     })
 
+
     setTimeout(() => {
-        if (babyGameLoose == true) return null;
-        else {
-            alert('win')
-        }
+        alert('win')
         close()
     }, 180000)
 }
@@ -178,115 +169,243 @@ function SkipGame() {
 }
 
 
-// color memo game
 
-let memoGame = () => {
-    console.log('========')
-    let yourTurn = document.querySelector('.you')
-    let colors = document.querySelectorAll('.colors')
-    memoGameRecal++;
-    let multiplicateur = memoGameRecal * 2
-    let i = 0  
-    let canTouch = false
-    let res = []
-    let colorWrapper = document.querySelector('.colors-wrapper')
-    let awnsertb = []
-    let round = document.querySelector('#Round')
-    console.log(round)
+function analDestroyer() {
+    let count = 0
+    let count1 = 0
+    let count2 = 0
+    appender()
+    appender2()
+    appender3()
+    bugMinigame.classList.remove('hidden')
+    function appender() {
+        if (count == 90) return null
+        setTimeout(() => {
+            if (speed <= 0) speed = 300
+            count++
+            let mainDiv = document.createElement('div')
+            let border = document.createElement('div')
+            let window = document.createElement('div')
+            let name = document.createElement('div')
+            let windowName = document.createElement('p')
+            let expand = document.createElement('div')
+            let minus = document.createElement('div')
+            let close = document.createElement('div')
+            let insideExpand = document.createElement('i')
+            let insideMinus = document.createElement('i')
+            let insideClose = document.createElement('i')
+            let insideWindow = document.createElement('div')
+            let imageWindow = document.createElement('div')
+            let insideImageWindow = document.createElement('img')
+            let textWindow = document.createElement('div')
+            let insideTextWindow = document.createElement('p')
 
+            mainDiv.classList.add('first-window', 'window')
+            mainDiv.style.position = "relative"
+            mainDiv.style.zIndex = Math.floor(Math.random() * (20 - 1) + 1)
+            mainDiv.style.top = Math.floor(Math.random() * (200 - (-490)) + (-490)) + "px"
+            mainDiv.style.left = Math.floor(Math.random() * (1000 - (-570)) + (-570)) + "px"
+            border.classList.add('border', 'border-two')
+            window.classList.add('window-container')
+            name.classList.add('name-container')
+            windowName.classList.add('game-name')
+            expand.classList.add('window-icons')
+            minus.classList.add('window-icons')
+            close.classList.add('window-icons', 'cross')
+            insideExpand.classList.add('fa-solid', 'fa-expand')
+            insideMinus.classList.add('fa-solid', 'fa-minus')
+            insideClose.classList.add('fa-solid', 'fa-xmark')
+            insideWindow.classList.add('window-window')
+            imageWindow.classList.add('eye')
+            insideImageWindow.src = "../assets/image/eye.gif"
+            insideImageWindow.alt = "eye"
+            textWindow.classList.add('text')
 
+            windowName.textContent = "Problems.exe"
+            insideTextWindow.textContent = "He is watching you."
 
-    let displayColors = () => {
-        for (y = 0; y < multiplicateur; y++) (function(i) {
-            let randomColor = Math.floor(Math.random() * (4 - 0) + 0)
+            bugMinigame.appendChild(mainDiv)
+            mainDiv.appendChild(border)
 
-            setTimeout(function() {
-                colors.forEach((colorsBox) => colorsBox.classList.add('unselected-color'))
-                console.log(randomColor)
-                colors[randomColor].classList.remove('unselected-color')
-                setTimeout(() => {
-                    colors[randomColor].classList.add('unselected-color')
-                    res.push(randomColor)
-                    console.log(res)
-                    if (res.length == multiplicateur) {
-                        canTouch = true
-                        yourTurn.classList.remove('hidden')
-                    }
-                }, 500)
-            }, timeSpeed * (i+1));
-        }(y));
+            border.appendChild(window)
+            border.appendChild(insideWindow)
+
+            window.appendChild(name)
+            window.appendChild(expand)
+            window.appendChild(minus)
+            window.appendChild(close)
+            name.appendChild(windowName)
+            expand.appendChild(insideExpand)
+            minus.appendChild(insideMinus)
+            close.appendChild(insideClose)
+
+            insideWindow.appendChild(imageWindow)
+            insideWindow.appendChild(textWindow)
+
+            imageWindow.appendChild(insideImageWindow)
+            textWindow.appendChild(insideTextWindow)
+            speed -= 200
+            appender()
+        }, speed);
     }
 
-    let verifCard = () => {
-        if (awnsertb.length == res.length) {
-            canTouch = false
-            for (let i = 0; i < awnsertb.length; i++) {
-                if (awnsertb[i] != res[i]) {
-                    memoGameError++
-                    i = 99999
-                }
-            }
+        function appender2() {
+            if (count1 == 50) return null
+            setTimeout(() => {
+                if (speed1 <= 0) speed1 = 300
+                count1++
+            let mainDiv = document.createElement('div')
+            let border = document.createElement('div')
+            let window = document.createElement('div')
+            let name = document.createElement('div')
+            let windowName = document.createElement('p')
+            let expand = document.createElement('div')
+            let minus = document.createElement('div')
+            let close = document.createElement('div')
+            let insideExpand = document.createElement('i')
+            let insideMinus = document.createElement('i')
+            let insideClose = document.createElement('i')
+            let insideWindow = document.createElement('div')
+            let imageWindow = document.createElement('div')
+            let insideImageWindow = document.createElement('img')
+            let textWindow = document.createElement('div')
+            let insideTextWindow = document.createElement('p')
 
-            if (memoGameRound == 4) {
-                if (memoGameError == 0) {
-                    colorWrapper.classList.add('hidden')
-                    yourTurn.classList.add('hidden')
-                    round.textContent = 'u really want the win huh ? good luck :)'
-                    round.classList.remove('hidden')
-                    setTimeout(() => {
-                        round.classList.add('hidden')
-                        colorWrapper.classList.remove('hidden')
-                        round.classList.add('hidden')
-                        memoGameRecal = 50;
-                        memoGame();
-                    }, 3000)
-                }
-                colorWrapper.classList.add('hidden')
-                yourTurn.classList.add('hidden')
-                round.textContent = 'vous avez eu ' + memoGameError + " faute sur 5"
-                round.classList.remove('hidden')
-                setTimeout(() => {
-                    round.classList.add('hidden')
-                    close();
-                }, 3000)
-                return null
-            } else {
-                yourTurn.classList.add('hidden')
-                colorWrapper.classList.add('hidden')
-                round.textContent = "Round : " + roundNb
-                round.classList.remove('hidden')
-                memoGameRound++;
-                setTimeout(() => {
-                    memoGame();
-                    colorWrapper.classList.remove('hidden')
-                    round.classList.add('hidden')
-                    roundNb++;
-                }, 3000)
-            }
+            mainDiv.classList.add('second-window', 'window')
+            mainDiv.style.position = "relative"
+            mainDiv.style.zIndex = Math.floor(Math.random() * (20 - 1) + 1)
+            mainDiv.style.top = Math.floor(Math.random() * (200 - (-490)) + (-490)) + "px"
+            mainDiv.style.left = Math.floor(Math.random() * (1000 - (-570)) + (-570)) + "px"
+            border.classList.add('border', 'border-three')
+            window.classList.add('window-container')
+            name.classList.add('name-container')
+            windowName.classList.add('game-name')
+            expand.classList.add('window-icons')
+            minus.classList.add('window-icons')
+            close.classList.add('window-icons', 'cross')
+            insideExpand.classList.add('fa-solid', 'fa-expand')
+            insideMinus.classList.add('fa-solid', 'fa-minus')
+            insideClose.classList.add('fa-solid', 'fa-xmark')
+            insideWindow.classList.add('window-window')
+            imageWindow.classList.add('warning')
+            insideImageWindow.src = "../assets/image/warning.gif"
+            insideImageWindow.alt = "warning"
+            textWindow.classList.add('text')
+
+            windowName.textContent = "More_Problems.exe"
+            insideTextWindow.textContent = "He knows where you are."
+
+            bugMinigame.appendChild(mainDiv)
+            mainDiv.appendChild(border)
+
+            border.appendChild(window)
+            border.appendChild(insideWindow)
+
+            window.appendChild(name)
+            window.appendChild(expand)
+            window.appendChild(minus)
+            window.appendChild(close)
+            name.appendChild(windowName)
+            expand.appendChild(insideExpand)
+            minus.appendChild(insideMinus)
+            close.appendChild(insideClose)
+
+            insideWindow.appendChild(imageWindow)
+            insideWindow.appendChild(textWindow)
+
+            imageWindow.appendChild(insideImageWindow)
+            textWindow.appendChild(insideTextWindow)
+            speed1 -= 200
+            appender2()
+            }, speed1);
         }
-    }
 
-    displayColors();
+        function appender3() {
+            if (count2 == 70) return null
+            setTimeout(() => {
+                if (speed2 <= 0) speed2 = 300
+                count2++
+            let mainDiv = document.createElement('div')
+            let border = document.createElement('div')
+            let window = document.createElement('div')
+            let name = document.createElement('div')
+            let windowName = document.createElement('p')
+            let expand = document.createElement('div')
+            let minus = document.createElement('div')
+            let close = document.createElement('div')
+            let insideExpand = document.createElement('i')
+            let insideMinus = document.createElement('i')
+            let insideClose = document.createElement('i')
+            let insideWindow = document.createElement('div')
+            let imageWindow = document.createElement('div')
+            let insideImageWindow = document.createElement('img')
+            let textWindow = document.createElement('div')
+            let insideTextWindow = document.createElement('p')
 
-    
-    
-    colors.forEach((colorBtn, i) => {
-        colorBtn.addEventListener('click', () => {
-            if (canTouch) {
-                if (colorWrapper.classList.contains('hidden')) {
-                    return null
-                } else {
-                    awnsertb.push(i)
-                    console.log(awnsertb)
-                    colorBtn.classList.add('color-clicked')
-                    setTimeout(() => {
-                        colorBtn.classList.remove('color-clicked')
-                    }, 500)
-                    verifCard()
-                }
-            } else {
-                return null
-            }
-        })
-    })
+            mainDiv.classList.add('third-window', 'window')
+            mainDiv.style.position = "relative"
+            mainDiv.style.zIndex = Math.floor(Math.random() * (20 - 1) + 1)
+            mainDiv.style.top = Math.floor(Math.random() * (200 - (-490)) + (-490)) + "px"
+            mainDiv.style.left = Math.floor(Math.random() * (1000 - (-570)) + (-570)) + "px"
+            border.classList.add('border', 'border-four')
+            window.classList.add('window-container')
+            name.classList.add('name-container')
+            windowName.classList.add('game-name')
+            expand.classList.add('window-icons')
+            minus.classList.add('window-icons')
+            close.classList.add('window-icons', 'cross')
+            insideExpand.classList.add('fa-solid', 'fa-expand')
+            insideMinus.classList.add('fa-solid', 'fa-minus')
+            insideClose.classList.add('fa-solid', 'fa-xmark')
+            insideWindow.classList.add('window-window')
+            imageWindow.classList.add('walking-man')
+            insideImageWindow.src = "../assets/image/walk.gif"
+            insideImageWindow.alt = "walk"
+            textWindow.classList.add('text')
+
+            windowName.textContent = "Computer_bug.exe"
+            insideTextWindow.textContent = "He will come after you"
+
+            bugMinigame.appendChild(mainDiv)
+            mainDiv.appendChild(border)
+
+            border.appendChild(window)
+            border.appendChild(insideWindow)
+
+            window.appendChild(name)
+            window.appendChild(expand)
+            window.appendChild(minus)
+            window.appendChild(close)
+            name.appendChild(windowName)
+            expand.appendChild(insideExpand)
+            minus.appendChild(insideMinus)
+            close.appendChild(insideClose)
+
+            insideWindow.appendChild(imageWindow)
+            insideWindow.appendChild(textWindow)
+
+            imageWindow.appendChild(insideImageWindow)
+            textWindow.appendChild(insideTextWindow)
+            speed2 -= 200
+            appender3()
+            }, speed2);
+        }
+
 }
+
+/*for (y = 0; y < multiplicateur; y++) (function(i) {
+    let randomColor = Math.floor(Math.random() * (4 - 0) + 0)            setTimeout(function() {
+        colors.forEach((colorsBox) => colorsBox.classList.add('unselected-color'))
+        console.log(randomColor)
+        colors[randomColor].classList.remove('unselected-color')
+        setTimeout(() => {
+            colors[randomColor].classList.add('unselected-color')
+            res.push(randomColor)
+            console.log(res)
+            if (res.length == multiplicateur) {
+                canTouch = true
+                yourTurn.classList.remove('hidden')
+            }
+        }, 500)
+    }, timeSpeed * (i+1));
+}(y));*/

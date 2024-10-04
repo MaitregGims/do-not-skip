@@ -9,6 +9,10 @@
     user-select: none;
 }
 
+body {
+    overflow: hidden;
+}
+
 h1 {
     font-size: 5rem !important;
     padding-top: 12%;
@@ -16,8 +20,7 @@ h1 {
 
 #game-menu,
 #loadingScreen,
-#game-screen,
-#tw {
+#game-screen {
     width: 100%;
     height: 100vh;
     background-color: black;
@@ -113,7 +116,8 @@ h1 {
     justify-content: center;
 }
 
-#options-menu {
+#options-menu,
+.border {
     width: 60%;
     height: 800px;
     border: 2px solid white;
@@ -124,8 +128,6 @@ h1 {
     flex-direction: column;
     border-radius: 10px;
 }
-
-
 
 .cross {
     width: 50px;
@@ -142,7 +144,7 @@ image {
 }
 
 .cross:hover {
-    background-color: red;
+   background-color: red;
 }
 
 .text-guy-wrapp {
@@ -153,8 +155,7 @@ image {
     height: 200px;
     display: flex;
     align-items: center;
-    justify-content: center;
-    padding: 10px;
+    padding: 5px;
 
 }
 
@@ -182,15 +183,12 @@ image {
     border: 3px solid white;
     clip-path: polygon(0 2px, 2px 2px, 2px 0, calc(100% - 2px) 0, calc(100% - 2px) 2px, 100% 2px, 100% calc(100% - 2px), calc(100% - 2px) calc(100% - 2px), calc(100% - 2px) 100%, 2px 100%, 2px calc(100% - 2px), 0 calc(100% - 2px));
 }
-
 .path {
     background-color: aliceblue;
 }
-
 .finish {
     background-color: rgb(50, 50, 128);
 }
-
 .lab-1_1 {
     width: 200px;
     height: 40px;
@@ -287,11 +285,9 @@ h2 {
     justify-content: center;
     flex-direction: column;
 }
-
 .timer {
     font-size: 60px;
 }
-
 .skip {
     display: flex;
     align-items: center;
@@ -304,196 +300,109 @@ h2 {
     transition: 0.5s ease-in;
     margin-bottom: 80px;
 }
-
 .skip:hover {
     color: red;
     border: 3px solid red;
 }
-
 .white-to-red {
     color: red;
     transition: 1s linear;
 }
-
 .red-to-white {
     color: white;
     transition: 0.8s linear;
 }
-
 .trembling {
     animation: trembler 1s infinite;
 }
-
 @keyframes trembler {
     0% {
         transform: translateX(0);
     }
-
     25% {
         transform: translateX(-5px);
     }
-
     50% {
         transform: translateX(5px);
     }
-
     75% {
         transform: translateX(-5px);
     }
-
     100% {
         transform: translateX(0);
     }
 }
 
-#tw {
-    transition: .5s;
-    justify-content: center;
+.bug {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    background-color: black;
+    transform: translate(-50%, -50%);
+    width: 40%;
 }
 
-@keyframes transition {
-    0% {
-        filter: brightness(100%);
-    }
-
-    30% {
-        filter: brightness(0%);
-    }
-
-    100% {
-        filter: brightness(100%);
-    }
+.main-window {
+    position: fixed;
+    z-index: 99999;
 }
 
-.transition {
-    animation: transition 6s ease-in-out;
-}
-
-.fa-headphones-simple {
-    font-size: 70px;
-}
-
-h3 {
-    font-size: 250%;
+.window {
     text-align: center;
 }
 
-
-
-.typewriter {
-    overflow: hidden;
-    /* Ensures the content is not revealed until the animation */
-    border-right: .15em solid white;
-    /* The typwriter cursor */
-    white-space: nowrap;
-    /* Keeps the content on a single line */
-    margin: 0 auto;
-    /* Gives that scrolling effect as the typing happens */
-    letter-spacing: .15em;
-    /* Adjust as needed */
-    animation:
-        typing 3.5s steps(40, end),
-        blink-caret .75s step-end infinite;
-}
-
-/* The typing effect */
-@keyframes typing {
-    from {
-        width: 0
-    }
-
-    to {
-        width: 40%
-    }
-}
-
-/* The typewriter cursor effect */
-@keyframes blink-caret {
-
-    from,
-    to {
-        border-color: transparent
-    }
-
-    50% {
-        border-color: rgb(255, 255, 255);
-    }
-}
-
-.game-name-changer {
-    margin: 0;
-    width: 70%;
-}
-
-.text-guy {
-    text-align: center;
-}
-
-
-
-#Round {
-    font-size: 200%;
-}
-
-
-.memos {
+.window-window {
     display: flex;
+    justify-content: center;
     align-items: center;
     flex-direction: column;
 }
 
-.colors {
-    width: 100px;
-    height: 100px;
-    border-radius: 10px;
-    cursor: pointer;
-    margin: 5px;
-    transition: .5s;
+.border-one {
+    width: 400px;
+    height: 270px;
+    position: fixed;
+    z-index: 999;
 }
 
-.colors-wrapper {
-    width: 30%;
-    justify-content: center;
-    align-items: center;
+.border-two {
+    width: 300px;
+    height: 250px;
+}
+
+.border-three {
+    width: 550px;
+    height: 370px;
+}
+
+.border-four {
+    height: 400px;
+    width: 300px;
+}
+
+.virus {
+    width: 50%;
     display: flex;
-    flex-wrap: wrap;
-    margin: 10% 0 15% 0;
+    margin: 0 auto;
 }
 
-.green {
-    background-color: green;
+.eye {
+    width: 71%;
 }
 
-.yellow {
-    background-color: yellow;
+.warning {
+    width: 70%;
 }
 
-.red-bg {
-    background-color: red;
+.walking-man {
+    width: 100%;
 }
 
-.blue {
-    background-color: blue;
+.virus img,
+.eye img,
+.warning img,
+.walking-man img {
+    width: 100%;
 }
 
-.unselected-color {
-    filter: brightness(20%);
-}
 
-.color-clicked {
-    animation: glow-up .5s ease-in;
-}
-
-@keyframes glow-up {
-    0% {
-        filter: brightness(20%);
-    } 
-
-    50% {
-        filter: brightness(100%);
-    }
-
-    100% {
-        filter: brightness(20%);
-    }
-}
