@@ -12,6 +12,7 @@ const jam = document.querySelector('#jam')
 const twScreen = document.querySelector('#tw')
 const allPage = document.querySelector('*')
 const warningText = document.querySelector('#warning')
+const mainWindow = document.querySelector('.main-window')
 const headphones = document.querySelector('.fa-headphones-simple')
 const expand = document.querySelector('#expand')
 const expandImage = document.querySelector('.fa-expand')
@@ -115,6 +116,35 @@ function mouseMove(e) {
 
 function mouseUp(e) {
     document.removeEventListener('mousemove', mouseMove)
+}
+
+
+//
+let newXX = 0, newYY = 0, startXX = 0, startYY = 0;
+let cards = document.querySelector('.border')
+cards.addEventListener('mousedown', NewmouseDown)
+
+function NewmouseDown(e){
+    startX = e.clientX
+    startY = e.clientY
+
+    document.addEventListener('mousemove', NewmouseMove)
+    document.addEventListener('mouseup', NewmouseUp)
+}
+
+function NewmouseMove(e){
+    newXX = startX - e.clientX
+    newYY = startY - e.clientY
+
+    startX = e.clientX
+    startY = e.clientY
+
+    mainWindow.style.top = (cards.offsetTop - newYY) + 'px'
+    mainWindow.style.left = (cards.offsetLeft - newXX) + 'px'
+}
+
+function NewmouseUp(e){
+    document.removeEventListener('mousemove', NewmouseMove)
 }
 
 

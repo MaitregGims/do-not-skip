@@ -113,7 +113,8 @@ h1 {
     justify-content: center;
 }
 
-#options-menu {
+#options-menu,
+.border {
     width: 60%;
     height: 800px;
     border: 2px solid white;
@@ -496,4 +497,105 @@ h3 {
     100% {
         filter: brightness(20%);
     }
+}
+
+.find-the-button {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0 5px 0 5px;
+}
+
+.red-border {
+    border-color: red;
+    color: red;
+}
+
+
+.scotch-container {
+    position: fixed;
+    opacity: 60%;
+    width: 100%;
+    height: 100vh;
+    background-image: url(https://64.media.tumblr.com/da60c13b478dda09ab90c27e880983b8/tumblr_nd4pwdPKdc1tun3l0o1_1280.gifv);
+    background-repeat: no-repeat;
+    background-size: cover;
+    mix-blend-mode: screen;
+    pointer-events: none;
+    z-index: 9999999;
+}
+
+.bug {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    background-color: black;
+    transform: translate(-50%, -50%);
+    width: 40%;
+}
+
+.main-window {
+    position: fixed;
+    z-index: 99999;
+}
+
+.window {
+    text-align: center;
+}
+
+.window-window {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.border-one {
+    width: 400px;
+    height: 270px;
+    position: fixed;
+    z-index: 999;
+}
+
+.border-two {
+    width: 300px;
+    height: 250px;
+}
+
+.border-three {
+    width: 550px;
+    height: 370px;
+}
+
+.border-four {
+    height: 400px;
+    width: 300px;
+}
+
+.virus {
+    width: 50%;
+    display: flex;
+    margin: 0 auto;
+}
+
+.eye {
+    width: 71%;
+}
+
+.warning {
+    width: 70%;
+}
+
+.walking-man {
+    width: 100%;
+}
+
+.virus img,
+.eye img,
+.warning img,
+.walking-man img {
+    width: 100%;
+}
+
+body {
+    overflow: hidden;
 }
